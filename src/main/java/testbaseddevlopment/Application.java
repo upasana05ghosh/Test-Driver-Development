@@ -12,6 +12,8 @@ public class Application {
 			e.printStackTrace();
 		}
 
+		System.out.println(obj.getCalCallCount());
+
 	}
 
 }

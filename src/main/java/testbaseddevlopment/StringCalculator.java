@@ -6,6 +6,8 @@ import java.util.List;
 
 public class StringCalculator {
 
+	static AddFunCallCounter addFunCallCounterInstance = new AddFunCallCounter();
+
 	/**
 	 *
 	 * The method can take 0, 1 or 2 numbers, and will return their sum (for an
@@ -15,6 +17,7 @@ public class StringCalculator {
 	 * @throws NegativeNumberException
 	 */
 	public int add(String numbers) throws NegativeNumberException {
+		instance().incrementCounter();
 
 		if (numbers == null || numbers.trim().isEmpty())
 			return 0;
@@ -36,7 +39,28 @@ public class StringCalculator {
 		if (!negativeNum.isEmpty()) {
 			throw new NegativeNumberException("negatives not allowed" + negativeNum);
 		}
+
 		return res;
+	}
+
+	public int getCalCallCount() {
+		return instance().getCounterVal();
+	}
+
+	private static AddFunCallCounter instance() {
+		return addFunCallCounterInstance;
+	}
+
+	private static class AddFunCallCounter {
+		int counter = 0;
+
+		synchronized void incrementCounter() {
+			counter++;
+		}
+
+		int getCounterVal() {
+			return counter;
+		}
 	}
 
 }
