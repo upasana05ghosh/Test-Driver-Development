@@ -34,8 +34,12 @@ public class TestStringCalculator {
 
 	@Test
 	public void twoValStringReturnThree() {
-		//System.out.println("printing val: " + cal.add("1,2"));
 		assertEquals(3, cal.add("1,2"));
+	}
+
+	@Test
+	public void handleNewLineCase() {
+		assertEquals(6, cal.add("1\n2,3"));
 	}
 
 }

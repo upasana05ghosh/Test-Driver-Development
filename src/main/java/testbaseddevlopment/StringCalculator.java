@@ -1,7 +1,5 @@
 package testbaseddevlopment;
 
-import org.junit.platform.commons.util.StringUtils;
-
 public class StringCalculator {
 
 	/**
@@ -12,10 +10,10 @@ public class StringCalculator {
 	 */
 	public int add(String numbers) {
 
-		if (StringUtils.isBlank(numbers))
+		if (numbers == null || numbers.trim().isEmpty())
 			return 0;
 
-		String numberList[] = numbers.split(",");
+		String numberList[] = numbers.replaceAll("\n", ",").split(",");
 
 		int res = 0;
 		for (String num : numberList) {
