@@ -3,6 +3,7 @@ package testbaseddevlopment;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -40,6 +41,12 @@ public class TestStringCalculator {
 	@Test
 	public void handleNewLineCase() {
 		assertEquals(6, cal.add("1\n2,3"));
+	}
+
+	@Test
+	@DisplayName("handle Different Dilimiter")
+	public void handleDifferentDilimiter() {
+		assertEquals(3, cal.add("//;\n1;2"));
 	}
 
 }

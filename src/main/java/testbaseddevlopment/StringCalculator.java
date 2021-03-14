@@ -13,11 +13,12 @@ public class StringCalculator {
 		if (numbers == null || numbers.trim().isEmpty())
 			return 0;
 
-		String numberList[] = numbers.replaceAll("\n", ",").split(",");
+		String numberList[] = numbers.replaceAll("[\n//]+", ",").split(",|;");
 
 		int res = 0;
 		for (String num : numberList) {
-			res += Integer.parseInt(num);
+			if (!num.trim().isEmpty())
+				res += Integer.parseInt(num);
 		}
 		return res;
 	}

@@ -6,7 +6,7 @@ public class Application {
 
 		StringCalculator obj = new StringCalculator();
 
-		System.out.println(obj.add("1\n2,3"));
+		System.out.println(obj.add("1;2"));
 
 	}
 
