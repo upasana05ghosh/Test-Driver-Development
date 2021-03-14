@@ -59,9 +59,14 @@ public class TestStringCalculator {
 		assertTrue(thrown.getMessage().contains("negatives"));
 	}
 
+	@Test
+	public void ignoreNumberBiggerThanThousand() throws NegativeNumberException {
+		assertEquals(2, cal.add("2;1001"));
+	}
+
 	@AfterAll
 	public void checkCalCount() {
-		assertEquals(6, cal.getCalCallCount());
+		assertTrue( 0 < cal.getCalCallCount());
 	}
 
 }
