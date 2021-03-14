@@ -6,7 +6,11 @@ public class Application {
 
 		StringCalculator obj = new StringCalculator();
 
-		System.out.println(obj.add("1;2"));
+		try {
+			System.out.println(obj.add("1;2"));
+		} catch (NegativeNumberException e) {
+			e.printStackTrace();
+		}
 
 	}
 

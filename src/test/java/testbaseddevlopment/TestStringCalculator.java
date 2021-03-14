@@ -1,6 +1,8 @@
 package testbaseddevlopment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -13,40 +15,48 @@ import org.mockito.MockitoAnnotations;
 @TestInstance(Lifecycle.PER_CLASS)
 public class TestStringCalculator {
 
-    @InjectMocks
-	 private StringCalculator cal;
+	@InjectMocks
+	private StringCalculator cal;
 
-	 @BeforeAll
-	 public void setup() {
-	 MockitoAnnotations.initMocks(this);
-	 }
-
+	@BeforeAll
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+	}
 
 	@Test
-	public void emptyStringReturnZero() {
+	public void emptyStringReturnZero() throws NegativeNumberException {
 		assertEquals(0, cal.add(""));
 	}
 
 	@Test
-	public void oneValStringReturnOne() {
+	public void oneValStringReturnOne() throws NegativeNumberException {
 		int val = cal.add("1");
 		assertEquals(1, val);
 	}
 
 	@Test
-	public void twoValStringReturnThree() {
+	public void twoValStringReturnThree() throws NegativeNumberException {
 		assertEquals(3, cal.add("1,2"));
 	}
 
 	@Test
-	public void handleNewLineCase() {
+	public void handleNewLineCase() throws NegativeNumberException {
 		assertEquals(6, cal.add("1\n2,3"));
 	}
 
 	@Test
 	@DisplayName("handle Different Dilimiter")
-	public void handleDifferentDilimiter() {
+	public void handleDifferentDilimiter() throws NegativeNumberException {
 		assertEquals(3, cal.add("//;\n1;2"));
+	}
+
+	@Test
+	public void testNegativeNumber() {
+		NegativeNumberException thrown = assertThrows(NegativeNumberException.class,
+				() -> cal.add("-1;-2"),
+				"Expected cal() to throw negative number exception, but it didn't");
+		System.out.println(thrown.getMessage());
+		assertTrue(thrown.getMessage().contains("negatives"));
 	}
 
 }
