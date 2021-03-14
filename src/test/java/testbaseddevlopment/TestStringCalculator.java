@@ -69,6 +69,11 @@ public class TestStringCalculator {
 		assertEquals(6, cal.add("//[***]\n1***2***3"));
 	}
 
+	@Test
+	public void testmulipleDelimiter() throws NegativeNumberException {
+		assertEquals(6, cal.add("//[*][%]\n1*2%3"));
+	}
+
 	@AfterAll
 	public void checkCalCount() {
 		assertTrue( 0 < cal.getCalCallCount());

@@ -24,7 +24,7 @@ public class StringCalculator {
 
 		// remove '\n' and '//'
 		// split on ',' or ';'
-		String numberList[] = numbers.replaceAll("[\n//*\\[\\]]+", ",").split(",|;");
+		String numberList[] = numbers.replaceAll("[\n//*\\[\\]%]+", ",").split(",|;");
 
 		int res = 0;
 		List<String> negativeNum = new ArrayList<>();
