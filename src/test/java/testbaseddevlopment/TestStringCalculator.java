@@ -74,9 +74,16 @@ public class TestStringCalculator {
 		assertEquals(6, cal.add("//[*][%]\n1*2%3"));
 	}
 
+	@Test
+	public void testmulipleLengthDelimiter() throws NegativeNumberException {
+		assertEquals(6, cal.add("//[**][%%]\n1**2%%3"));
+	}
+
 	@AfterAll
 	public void checkCalCount() {
-		assertTrue( 0 < cal.getCalCallCount());
+		int callCounter = cal.getCalCallCount();
+		System.out.println("callCounter is: "+ callCounter);
+		assertTrue( 0 < callCounter);
 	}
 
 }
