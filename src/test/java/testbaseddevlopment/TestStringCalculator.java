@@ -52,11 +52,15 @@ public class TestStringCalculator {
 
 	@Test
 	public void testNegativeNumber() {
-		NegativeNumberException thrown = assertThrows(NegativeNumberException.class,
-				() -> cal.add("-1;-2"),
+		NegativeNumberException thrown = assertThrows(NegativeNumberException.class, () -> cal.add("-1;-2"),
 				"Expected cal() to throw negative number exception, but it didn't");
 		System.out.println(thrown.getMessage());
 		assertTrue(thrown.getMessage().contains("negatives"));
+	}
+
+	@Test
+	public void checkCalCount() {
+		assertEquals(6, cal.getCalCallCount());
 	}
 
 }
