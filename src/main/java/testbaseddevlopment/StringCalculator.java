@@ -24,7 +24,7 @@ public class StringCalculator {
 
 		// remove '\n' and '//'
 		// split on ',' or ';'
-		String numberList[] = numbers.replaceAll("[\n//]+", ",").split(",|;");
+		String numberList[] = numbers.replaceAll("[\n//*\\[\\]]+", ",").split(",|;");
 
 		int res = 0;
 		List<String> negativeNum = new ArrayList<>();
@@ -33,7 +33,7 @@ public class StringCalculator {
 			if (num.contains("-")) {
 				negativeNum.add(num);
 			} else if (!num.trim().isEmpty())
-				res += Integer.parseInt(num);
+				res += (Integer.parseInt(num) < 1000 ? Integer.parseInt(num) : 0);
 		}
 
 		if (!negativeNum.isEmpty()) {

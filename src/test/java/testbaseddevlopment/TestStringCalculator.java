@@ -64,6 +64,11 @@ public class TestStringCalculator {
 		assertEquals(2, cal.add("2;1001"));
 	}
 
+	@Test
+	public void variableLengthDelimiter() throws NegativeNumberException {
+		assertEquals(6, cal.add("//[***]\n1***2***3"));
+	}
+
 	@AfterAll
 	public void checkCalCount() {
 		assertTrue( 0 < cal.getCalCallCount());

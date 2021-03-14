@@ -7,7 +7,7 @@ public class Application {
 		StringCalculator obj = new StringCalculator();
 
 		try {
-			System.out.println(obj.add("1;2"));
+			System.out.println(obj.add("//[***]\n1***2***3"));
 		} catch (NegativeNumberException e) {
 			e.printStackTrace();
 		}
