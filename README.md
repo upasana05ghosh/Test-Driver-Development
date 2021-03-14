@@ -29,7 +29,7 @@ The method can take 0, 1 or 2 numbers, and will return their sum </br>
       “” == 0 , “1” == 1 , “1,2” == 3 </br>
       
  ### Add function: 
- [Link to function](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/main/java/testbaseddevlopment/StringCalculator.java)
+ [Link to the function](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/main/java/testbaseddevlopment/StringCalculator.java)
  
  Snapshot of add function
  
@@ -63,7 +63,7 @@ The method can take 0, 1 or 2 numbers, and will return their sum </br>
  ```
  
  ### Test cases: 
- [Link to Test Cases](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/test/java/testbaseddevlopment/TestStringCalculator.java)
+ [Link to the Test Cases](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/test/java/testbaseddevlopment/TestStringCalculator.java)
  
  
  ## Few snapshots of the code
@@ -101,3 +101,4 @@ The method can take 0, 1 or 2 numbers, and will return their sum </br>
 
 # Reference
 https://junit.org/junit5/docs/current/user-guide/
+https://osherove.com/tdd-kata-1
