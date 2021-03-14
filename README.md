@@ -23,6 +23,44 @@ Create a simple class StringCalculator with a method public int add(string numbe
 The method can take 0, 1 or 2 numbers, and will return their sum </br>
 (for example: for an empty string it will return 0) </br>
       “” == 0 , “1” == 1 , “1,2” == 3 </br>
+      
+ ### Add function: 
+ [Link](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/main/java/testbaseddevlopment/StringCalculator.java)
+ 
+ Snapshot of add function
+ 
+ ```
+	public int add(String numbers) throws NegativeNumberException {
+	    instance().incrementCounter();
+
+		if (numbers == null || numbers.trim().isEmpty())
+			return 0;
+
+		// remove '\n' and '//'
+		// split on ',' or ';'
+		String numberList[] = numbers.replaceAll("[\n//*\\[\\]%]+", ",").split(",|;");
+
+		int res = 0;
+		List<String> negativeNum = new ArrayList<>();
+		for (String num : numberList) {
+
+			if (num.contains("-")) {
+				negativeNum.add(num);
+			} else if (!num.trim().isEmpty())
+				res += (Integer.parseInt(num) < 1000 ? Integer.parseInt(num) : 0);
+		}
+
+		if (!negativeNum.isEmpty()) {
+			throw new NegativeNumberException("negatives not allowed" + negativeNum);
+		}
+
+		return res;
+	}
+ ```
+ 
+ ### Test cases: 
+ [Link](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/test/java/testbaseddevlopment/TestStringCalculator.java)
+ 
  
  ## Few snapshots of the code
  
