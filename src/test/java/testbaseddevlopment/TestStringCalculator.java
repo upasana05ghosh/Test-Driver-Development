@@ -6,19 +6,20 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import org.mockito.Mock;
+import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class TestStringCalculator {
 
-	@Mock
-	private StringCalculator cal;
+    @InjectMocks
+	 private StringCalculator cal;
 
-    @BeforeAll
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-    }
+	 @BeforeAll
+	 public void setup() {
+	 MockitoAnnotations.initMocks(this);
+	 }
+
 
 	@Test
 	public void emptyStringReturnZero() {
@@ -27,11 +28,13 @@ public class TestStringCalculator {
 
 	@Test
 	public void oneValStringReturnOne() {
-		assertEquals(1, cal.add("1"));
+		int val = cal.add("1");
+		assertEquals(1, val);
 	}
 
 	@Test
 	public void twoValStringReturnThree() {
+		//System.out.println("printing val: " + cal.add("1,2"));
 		assertEquals(3, cal.add("1,2"));
 	}
 
