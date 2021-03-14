@@ -10,13 +10,17 @@ Test Driven Development (TDD) is development approach in which
  5. We will write mode code and eventually all case test will get passed.
  6. We will be refactoring our code a little more and will test again.
  
-In simple terms, test cases for each functionality are created and tested first and if the test fails then the new code is written in order to pass the test and making code simple and bug-free.
+In simple terms, test cases for each functionality are created and tested first </br>
+and if the test fails then the new code is written in order to pass the test and making code simple and bug-free.
 
 ## Benefits of TDD
-
+1. Better code quality - We define the expecatations/use cases and then code accordingly. This helps to write a focused code.
+2. Error prone code - It helps to create an error prone code as in each stage, we check if our test cases are not failing.
+3. Ease of maintenance - Changes to the applications will be easier and it will ensure that the existing functionality is working as expected.
+4. Save overall project cost in long run
 
 ## Problem Statement: String Calculator
-I used the following problem statement to create this TDD java application: https://osherove.com/tdd-kata-1
+I used the following problem statement to create this TDD java application: https://osherove.com/tdd-kata-1 </br>
 String Calculator
 
 Create a simple class StringCalculator with a method public int add(string numbers) </br>
@@ -25,7 +29,7 @@ The method can take 0, 1 or 2 numbers, and will return their sum </br>
       “” == 0 , “1” == 1 , “1,2” == 3 </br>
       
  ### Add function: 
- [Link](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/main/java/testbaseddevlopment/StringCalculator.java)
+ [Link to function](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/main/java/testbaseddevlopment/StringCalculator.java)
  
  Snapshot of add function
  
@@ -59,7 +63,7 @@ The method can take 0, 1 or 2 numbers, and will return their sum </br>
  ```
  
  ### Test cases: 
- [Link](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/test/java/testbaseddevlopment/TestStringCalculator.java)
+ [Link to Test Cases](https://github.com/upasana05ghosh/Test-Driver-Development/blob/main/src/test/java/testbaseddevlopment/TestStringCalculator.java)
  
  
  ## Few snapshots of the code
