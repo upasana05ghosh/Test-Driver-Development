@@ -8,7 +8,8 @@ public class StringCalculator {
 	 * empty string it will return 0) for example “” == 0 , “1” == 1 , “1,2” ==
 	 * 3
 	 */
-	public int Add(String numbers) {
+
+	public int add(String numbers) {
 		return 0;
 	}
 
