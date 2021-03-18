@@ -4,10 +4,10 @@ Test Driver Development | Java | Maven | JUnit
 ## Introduction
 Test Driven Development (TDD) is development approach in which 
  1. Test cases are developed first to test and validate all the use cases. 
- 2. Inittially, all the test cases are going to fail as there isn't any code to support it.
+ 2. Initially, all the test cases are going to fail as there isn't any code to support it.
  3. Then we will be writing our code.
  4. Few test cases will start to pass.
- 5. We will write mode code and eventually all case test will get passed.
+ 5. We will write more code and eventually all case test will get passed.
  6. We will be refactoring our code a little more and will test again.
  
 In simple terms, test cases for each functionality are created and tested first </br>
